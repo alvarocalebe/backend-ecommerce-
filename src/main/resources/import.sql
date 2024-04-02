@@ -113,6 +113,11 @@ values ('Pearl', 'Japão'),
        ('Tama', 'Japão'),
        ('Ludwig', 'Estados Unidos');
 
+
+       insert into Categoria (nomeCategoria)
+       values ('Pearl'),
+       ('Mapex')
+      
        alter sequence produto_id_seq restart 6;
 
 insert into Produto (categoriaInstrumento, codigo, descricao, nomeImagem, marca_id, nomeProduto, preco, quantidadeEstoque)

@@ -33,7 +33,7 @@ public class CategoriaResource {
     @GET
     public Response findAll() {
 
-        return Response.ok(categoriaService.getAll()).build();
+        return Response.ok(categoriaService.findAll()).build();
     }
 
     @GET

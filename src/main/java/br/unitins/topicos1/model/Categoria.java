@@ -17,9 +17,4 @@ public class Categoria extends DefaultEntity {
         this.nomeCategoria = nomeCategoria;
     }
 
-
-    
-
-
- 
 }
