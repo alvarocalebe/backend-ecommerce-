@@ -64,6 +64,9 @@ public class BateriaCompletaServiceImpl implements BateriaCompletaService {
         if (marcaRepository.findById(dto.IdMarca()) != null)
         bateriaCompleta.setMarca(marcaRepository.findById(dto.IdMarca()));
 
+        if (dto.quantTambor() != null) 
+        bateriaCompleta.setQuantTambor(dto.quantTambor());
+        
         if (dto.quantidadeEstoque() != null)
         bateriaCompleta.setQuantidadeEstoque(dto.quantidadeEstoque());
 
