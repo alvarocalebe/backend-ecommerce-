@@ -35,7 +35,7 @@ public class BateriaCompletaServiceImpl implements BateriaCompletaService {
         bateriaCompleta.setNomeBateria(dto.nomeBateria());
         bateriaCompleta.setDescricao(dto.descricao());
         bateriaCompleta.setQuantidadeEstoque(dto.quantidadeEstoque());
-        bateriaCompleta.setQuantTambor(dto.quantTambor());
+        bateriaCompleta.setQuantidadeTambor(dto.quantidadeTambor());
         bateriaCompleta.setPreco(dto.preco());
         bateriaCompleta.setNomeImagem(dto.nomeImagem());
         bateriaCompleta.setCategoria(categoriaRepository.findById(dto.IdCategoria()));
@@ -64,8 +64,8 @@ public class BateriaCompletaServiceImpl implements BateriaCompletaService {
         if (marcaRepository.findById(dto.IdMarca()) != null)
         bateriaCompleta.setMarca(marcaRepository.findById(dto.IdMarca()));
 
-        if (dto.quantTambor() != null) 
-        bateriaCompleta.setQuantTambor(dto.quantTambor());
+        if (dto.quantidadeTambor() != null) 
+        bateriaCompleta.setQuantidadeTambor(dto.quantidadeTambor());
         
         if (dto.quantidadeEstoque() != null)
         bateriaCompleta.setQuantidadeEstoque(dto.quantidadeEstoque());

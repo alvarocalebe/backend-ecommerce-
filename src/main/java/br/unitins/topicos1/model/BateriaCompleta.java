@@ -13,7 +13,7 @@ public class BateriaCompleta extends DefaultEntity {
 
     private Double preco;
 
-    private Integer quantTambor;
+    private Integer quantidadeTambor;
 
     private Integer quantidadeEstoque;
 
@@ -51,14 +51,6 @@ public class BateriaCompleta extends DefaultEntity {
         this.preco = preco;
     }
 
-    public int getQuantTambor() {
-        return quantTambor;
-    }
-
-    public void setQuantTambor(int quantTambores) {
-        this.quantTambor = quantTambores;
-    }
-
     public Integer getQuantidadeEstoque() {
         return quantidadeEstoque;
     }
@@ -89,6 +81,14 @@ public class BateriaCompleta extends DefaultEntity {
 
     public void setNomeImagem(String nomeImagem) {
         this.nomeImagem = nomeImagem;
+    }
+
+    public Integer getQuantidadeTambor() {
+        return quantidadeTambor;
+    }
+
+    public void setQuantidadeTambor(Integer quantidadeTambor) {
+        this.quantidadeTambor = quantidadeTambor;
     }
 
 

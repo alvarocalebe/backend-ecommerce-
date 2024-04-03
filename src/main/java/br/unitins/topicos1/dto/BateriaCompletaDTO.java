@@ -15,7 +15,7 @@ public record BateriaCompletaDTO(
         Double preco,
         @NotNull
         @PositiveOrZero
-        Integer quantTambor,
+        Integer quantidadeTambor,
         @NotNull
         @PositiveOrZero
         Integer quantidadeEstoque,

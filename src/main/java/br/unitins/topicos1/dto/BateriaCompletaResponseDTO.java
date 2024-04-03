@@ -25,7 +25,7 @@ public record BateriaCompletaResponseDTO(
                     MarcaResponseDTO.valueOf(bateriaCompleta.getMarca()), 
                     CategoriaResponseDTO.valueOf(bateriaCompleta.getCategoria()),
                     bateriaCompleta.getQuantidadeEstoque(),
-                    bateriaCompleta.getQuantTambor(),
+                    bateriaCompleta.getQuantidadeTambor(),
                     bateriaCompleta.getPreco()
             );
         } catch (NullPointerException e) {
