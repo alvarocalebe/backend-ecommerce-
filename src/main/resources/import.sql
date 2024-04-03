@@ -113,26 +113,15 @@ values ('Pearl', 'Japão'),
        ('Tama', 'Japão'),
        ('Ludwig', 'Estados Unidos');
 
+insert into Categoria (nomeCategoria)
+values ('Categoria 1'),
+       ('Categoria 2');
 
-       insert into Categoria (nomeCategoria)
-       values ('Pearl'),
-       ('Mapex')
-      
-       alter sequence produto_id_seq restart 6;
-
-insert into Produto (categoriaInstrumento, codigo, descricao, nomeImagem, marca_id, nomeProduto, preco, quantidadeEstoque)
-values ('CORDAS', 'GUITAR001', 'Guitarra elétrica', 'guitarra.jpg', 1, 'Stratocaster', 999.99, 10),
-       ('PERCUSSAO', 'DRUM001', 'Bateria completa', 'bateria.jpg', 2, 'Export Series', 1499.99, 5),
-       ('TECLADO', 'KEYB001', 'Teclado digital', 'teclado.jpg', 3, 'PSR-E363', 499.99, 7),
-       ('SOPRO', 'FLUTE001', 'Flauta transversal', 'flauta.jpg', 3, 'YFL-222', 299.99, 12),
-       ('OUTROS', 'AMP001', 'Amplificador de guitarra', 'amplificador.jpg', 4, 'MG30GFX', 199.99, 8),
-       ('CORDAS', 'BASS001', 'Baixo elétrico', 'baixo.jpg', 1, 'SR300', 599.99, 6),
-       ('PERCUSSAO', 'CAJON001', 'Cajón', 'cajon.jpg', 2, 'Aspire', 99.99, 15),
-       ('TECLADO', 'SYNTH001', 'Sintetizador', 'sintetizador.jpg', 3, 'Juno-DS88', 799.99, 3),
-       ('SOPRO', 'SAX001', 'Saxofone alto', 'saxofone.jpg', 4, 'AS42', 1499.99, 4),
-       ('OUTROS', 'MIC001', 'Microfone condensador', 'microfone.jpg', 1, 'SM7B', 349.99, 9);
-
-alter sequence produto_id_seq restart 11;
+INSERT INTO BateriaCompleta (nomeBateria, descricao, quantidadeEstoque, quantTambor, preco, nomeImagem, id_categoria, id_marca) 
+VALUES 
+('Bateria A', 'Descrição da Bateria A', 10, 4, 999.99, 'imagem1.jpg', 1, 1),
+('Bateria B', 'Descrição da Bateria B', 5, 5, 1499.99, 'imagem2.jpg', 2, 2),
+('Bateria C', 'Descrição da Bateria C', 7, 3, 499.99, 'imagem3.jpg', 2, 1);
 
 insert into Pedido (dataCriacao, tipoPagamento, total, id_cliente, id_cupom)
 values

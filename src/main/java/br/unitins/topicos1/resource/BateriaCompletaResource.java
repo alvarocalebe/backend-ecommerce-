@@ -35,7 +35,7 @@ public class BateriaCompletaResource {
        @PATCH
     @Path("/upload/imagem/{id}")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response salvarImagem(@MultipartForm ProdutoImageForm form,@PathParam("id") Long id ){
+    public Response salvarImagem(@MultipartForm ProdutoImageForm form,@PathParam("id") Long idBateria ){
         try {
             fileService.salvar(form.getNomeImagem(), form.getImagem());
             LOG.infof("Download do arquivo concluido com sucesso: " + form.getNomeImagem());
@@ -47,7 +47,7 @@ public class BateriaCompletaResource {
         }
 
        
-     service.updateNomeImagem(id, form.getNomeImagem());
+     service.updateNomeImagem(idBateria, form.getNomeImagem());
 
         return Response.ok(Status.NO_CONTENT).build();
 
@@ -88,14 +88,14 @@ public class BateriaCompletaResource {
 
     @PUT
     @Path("/{id}")
-    public Response update(BateriaCompletaDTO dto, @PathParam("id") Long id) {
+    public Response update(BateriaCompletaDTO dto, @PathParam("id") Long idBateria) {
         Result result = null;
         try {
-            service.update(dto, id);
-            LOG.infof("Bateria (%d) atualizado com sucesso.", id);
+            service.update(dto, idBateria);
+            LOG.infof("Bateria (%d) atualizado com sucesso.", idBateria);
             return Response.noContent().build();
         } catch (ConstraintViolationException e) {
-            LOG.errorf("Erro ao atualizar uma Bateria. ", id, e);
+            LOG.errorf("Erro ao atualizar uma Bateria. ", idBateria, e);
             LOG.debug(e.getMessage());
 
             result = new Result(e.getConstraintViolations());
@@ -112,10 +112,10 @@ public class BateriaCompletaResource {
 
     @DELETE
     @Path("/{id}")
-    public Response delete(@PathParam("id") Long id) {        
+    public Response delete(@PathParam("id") Long idBateria) {        
             LOG.info("Buscando Bateria por ID... ");
-           if (service.findById(id)!=null) {
-              service.delete(id);
+           if (service.findById(idBateria)!=null) {
+              service.delete(idBateria);
             LOG.infof("Bateria excluido com sucesso.");
            return Response.noContent().build();
               }
@@ -126,13 +126,13 @@ public class BateriaCompletaResource {
 
     @GET
     @Path("/{id}")
-    public Response findById(@PathParam("id") Long id) {
-        LOG.infof("Buscando Bateria por ID. ", id);
-        if (service.findById(id)!=null) {
-            LOG.infof("Bateria (%d) encontrado com sucesso.", id);
-            return Response.ok(service.findById(id)).build();
+    public Response findById(@PathParam("id") Long idBateria) {
+        LOG.infof("Buscando Bateria por ID. ", idBateria);
+        if (service.findById(idBateria)!=null) {
+            LOG.infof("Bateria (%d) encontrado com sucesso.", idBateria);
+            return Response.ok(service.findById(idBateria)).build();
         }
-        LOG.errorf("Bateria com id (%d) nao encontrado.", id);
+        LOG.errorf("Bateria com id (%d) nao encontrado.", idBateria);
         return Response.status(Status.NOT_FOUND).build();
     }
 

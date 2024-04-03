@@ -45,8 +45,8 @@ public class BaquetaServiceImpl implements BaquetaService {
 
     @Override
     @Transactional
-    public BaquetaResponseDTO update(BaquetaDTO dto, Long idMarca) {
-        Baqueta baqueta = baquetaRepository.findById(idMarca);
+    public BaquetaResponseDTO update(BaquetaDTO dto, Long idBaqueta) {
+        Baqueta baqueta = baquetaRepository.findById(idBaqueta);
         if (dto.preco() != null)
         baqueta.setPreco(dto.preco());
 
@@ -76,14 +76,14 @@ public class BaquetaServiceImpl implements BaquetaService {
 
     @Override
     @Transactional
-    public BaquetaResponseDTO findById(Long idMarca) {
-        return BaquetaResponseDTO.valueOf(baquetaRepository.findById(idMarca));
+    public BaquetaResponseDTO findById(Long idBaqueta) {
+        return BaquetaResponseDTO.valueOf(baquetaRepository.findById(idBaqueta));
     }
 
     @Override
     @Transactional
-    public void delete(Long id) {
-        baquetaRepository.deleteById(id);
+    public void delete(Long idBaqueta) {
+        baquetaRepository.deleteById(idBaqueta);
     }
 
     @Override

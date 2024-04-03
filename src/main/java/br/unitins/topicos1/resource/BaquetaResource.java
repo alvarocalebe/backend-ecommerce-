@@ -38,24 +38,24 @@ public class BaquetaResource {
 
     @GET
     @Path("/{id}")
-    public Response findById(@PathParam("id") Long idMarca) {
-        return Response.ok(baquetaService.findById(idMarca)).build();
+    public Response findById(@PathParam("id") Long idBaqueta) {
+        return Response.ok(baquetaService.findById(idBaqueta)).build();
     }
 
     @PUT
     @Path("/{id}")
-    public Response update(BaquetaDTO dto, @PathParam("id") Long idMarca) {
+    public Response update(BaquetaDTO dto, @PathParam("id") Long idBaqueta) {
         
 
-        baquetaService.update(dto, idMarca);
+        baquetaService.update(dto, idBaqueta);
         return Response.noContent().build();
     }
 
     @DELETE
     @Path("/{id}")
-    public Response delete(@PathParam("id") Long idMarca) {
+    public Response delete(@PathParam("id") Long idBaqueta) {
        
-        baquetaService.delete(idMarca);
+        baquetaService.delete(idBaqueta);
         return Response.noContent().build();
     }
 

@@ -9,13 +9,13 @@ import java.util.List;
 public interface AcessorioService {
     AcessorioResponseDTO insert(AcessorioDTO dto);
 
-    AcessorioResponseDTO update(AcessorioDTO dto, Long id);
+    AcessorioResponseDTO update(AcessorioDTO dto, Long idAcessorio);
 
-    void delete(Long id);
+    void delete(Long idAcessorio);
 
-    void updateNomeImagem(Long id, String nomeImagem) ;
+    void updateNomeImagem(Long idAcessorio, String nomeImagem) ;
 
-    AcessorioResponseDTO findById(Long id);
+    AcessorioResponseDTO findById(Long idAcessorio);
 
     List<AcessorioResponseDTO> getAll();
 }

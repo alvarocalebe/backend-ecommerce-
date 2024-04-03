@@ -9,6 +9,7 @@ import br.unitins.topicos1.model.Categoria;
 import br.unitins.topicos1.repository.CategoriaRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class CategoriaServiceImpl implements CategoriaService {
@@ -18,6 +19,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     CategoriaRepository categoriaRepository;
 
     @Override
+    @Transactional
     public CategoriaResponseDTO insert(CategoriaDTO dto) {
         Categoria categoria = new Categoria();
 
@@ -29,6 +31,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
+    @Transactional
     public CategoriaResponseDTO update(CategoriaDTO dto, Long idCategoria) {
        Categoria categoriaAtualizada = categoriaRepository.findById(idCategoria);
         
@@ -41,10 +44,11 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
+    @Transactional
     public CategoriaResponseDTO findById(Long idCategoria) {
         return CategoriaResponseDTO.valueOf(categoriaRepository.findById(idCategoria));
     }
-
+    @Transactional
     @Override
     public void delete(Long idCategoria) {
        categoriaRepository.deleteById(idCategoria);

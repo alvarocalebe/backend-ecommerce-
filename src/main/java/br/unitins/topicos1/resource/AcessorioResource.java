@@ -1,7 +1,7 @@
 package br.unitins.topicos1.resource;
 
-import br.unitins.topicos1.dto.MarcaDTO;
-import br.unitins.topicos1.service.MarcaService;
+import br.unitins.topicos1.dto.AcessorioDTO;
+import br.unitins.topicos1.service.AcessorioService;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
@@ -22,40 +22,40 @@ import jakarta.ws.rs.core.MediaType;
 public class AcessorioResource {
 
     @Inject
-    MarcaService marcaService;
+    AcessorioService acessorioService;
 
     @POST
-    public Response insertMarca(@Valid MarcaDTO dto) {
-        return Response.status(Status.CREATED).entity(marcaService.insertMarca(dto)).build();
+    public Response insertMarca(@Valid AcessorioDTO dto) {
+        return Response.status(Status.CREATED).entity(acessorioService.insert(dto)).build();
     }
 
 
     @GET
     public Response findAll() {
 
-        return Response.ok(marcaService.getAll()).build();
+        return Response.ok(acessorioService.getAll()).build();
     }
 
     @GET
     @Path("/{id}")
-    public Response findById(@PathParam("id") Long idMarca) {
-        return Response.ok(marcaService.findById(idMarca)).build();
+    public Response findById(@PathParam("id") Long idAcessorio) {
+        return Response.ok(acessorioService.findById(idAcessorio)).build();
     }
 
     @PUT
     @Path("/{id}")
-    public Response updateMarca(MarcaDTO dto, @PathParam("id") Long idMarca) {
+    public Response update(AcessorioDTO dto, @PathParam("id") Long idAcessorio) {
         
 
-        marcaService.updateMarca(dto, idMarca);
+        acessorioService.update(dto, idAcessorio);
         return Response.noContent().build();
     }
 
     @DELETE
     @Path("/{id}")
-    public Response delete(@PathParam("id") Long idMarca) {
+    public Response delete(@PathParam("id") Long idAcessorio) {
        
-        marcaService.delete(idMarca);
+        acessorioService.delete(idAcessorio);
         return Response.noContent().build();
     }
 

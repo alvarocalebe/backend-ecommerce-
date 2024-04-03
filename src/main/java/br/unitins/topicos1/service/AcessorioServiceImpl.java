@@ -47,8 +47,8 @@ public class AcessorioServiceImpl implements AcessorioService {
 
     @Override
     @Transactional
-    public AcessorioResponseDTO update(AcessorioDTO dto, Long id) {
-        Acessorio acessorio = repository.findById(id);
+    public AcessorioResponseDTO update(AcessorioDTO dto, Long idAcessorio) {
+        Acessorio acessorio = repository.findById(idAcessorio);
         
 
         if (dto.preco() != null)
@@ -85,16 +85,16 @@ public class AcessorioServiceImpl implements AcessorioService {
     }
 
     @Override
-    public AcessorioResponseDTO findById(Long id) {
-        return AcessorioResponseDTO.valueOf(repository.findById(id));
+    public AcessorioResponseDTO findById(Long idAcessorio) {
+        return AcessorioResponseDTO.valueOf(repository.findById(idAcessorio));
     }
 
  
 
     @Override
     @Transactional
-    public void updateNomeImagem(Long id, String nomeImagem) {
-        Acessorio acessorio = repository.findById(id);
+    public void updateNomeImagem(Long idAcessorio, String nomeImagem) {
+        Acessorio acessorio = repository.findById(idAcessorio);
 
         if (acessorio == null)
             throw new NullPointerException("Nenhum acessorio encontrado");
