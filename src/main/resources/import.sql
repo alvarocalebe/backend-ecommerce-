@@ -115,13 +115,34 @@ values ('Pearl', 'Japão'),
 
 insert into Categoria (nomeCategoria)
 values ('Categoria 1'),
-       ('Categoria 2');
+       ('Categoria 2'),
+       ('Categoria 3'),
+       ('Categoria 4');
 
-INSERT INTO BateriaCompleta (nomeBateria, descricao, quantidadeEstoque, quantTambor, preco, nomeImagem, id_categoria, id_marca) 
+INSERT INTO BateriaCompleta (nomeBateria, descricao, quantidadeEstoque, quantidadeTambor, preco, nomeImagem, id_categoria, id_marca) 
 VALUES 
 ('Bateria A', 'Descrição da Bateria A', 10, 4, 999.99, 'imagem1.jpg', 1, 1),
 ('Bateria B', 'Descrição da Bateria B', 5, 5, 1499.99, 'imagem2.jpg', 2, 2),
 ('Bateria C', 'Descrição da Bateria C', 7, 3, 499.99, 'imagem3.jpg', 2, 1);
+
+INSERT INTO Acessorio (nomeAcessorio, descricao, preco, quantidadeEstoque, id_marca, id_categoria, nomeImagem)
+VALUES 
+('Baqueta de Madeira', 'Baqueta de madeira para bateria', 15.99, 100, 1, 1, 'baqueta.jpg'),
+('Prato Crash 16"', 'Prato de crash de 16 polegadas', 79.99, 50, 2, 2, 'prato_crash.jpg'),
+('Pedal de Bumbo Duplo', 'Pedal de bumbo duplo para bateria', 199.99, 25, 3, 3, 'pedal_bumbo.jpg');
+
+INSERT INTO Baqueta (nomeBaqueta, descricao, preco, quantidadeEstoque, id_marca, id_categoria, nomeImagem)
+VALUES 
+('Baqueta de Madeira', 'Baqueta de madeira para bateria', 15.99, 100, 1, 1, 'baqueta_madeira.jpg'),
+('Baqueta de Nylon', 'Baqueta de nylon para bateria', 12.99, 80, 2, 1, 'baqueta_nylon.jpg'),
+('Baqueta de Fibra de Carbono', 'Baqueta de fibra de carbono para bateria', 24.99, 60, 3, 1, 'baqueta_fibra_carbono.jpg');
+
+
+INSERT INTO TamborAvulso (nomeTambor, descricao, preco, quantidadeEstoque, id_marca, id_categoria, nomeImagem)
+VALUES 
+('Caixa', 'Caixa de bateria avulsa', 249.99, 8, 1, 1, 'caixa.jpg'),
+('Surdo', 'Surdo de bateria avulso', 299.99, 5, 2, 1, 'surdo.jpg'),
+('Tom', 'Tom de bateria avulso', 179.99, 12, 3, 1, 'tom.jpg');
 
 insert into Pedido (dataCriacao, tipoPagamento, total, id_cliente, id_cupom)
 values
